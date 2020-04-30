@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>{{recipe.name}}</h1>
+    <h4>{{recipe.description}}</h4>
+    <p><em>servings: {{recipe.servings}}</em></p>
+    <p><em>Prep Time: {{recipe.prep_time}}</em></p>
+  <div *ngFor="let amount of Amounts">
+    <ul>
+      <li>Amount: {{ amount.amount }}</li>
+      <li>Ingredient: {{ amount.name }}</li>
+    </ul>
+  </div>
+</div>

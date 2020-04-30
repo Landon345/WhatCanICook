@@ -1,0 +1,53 @@
+<div class="">
+  <div class="row">
+    <div class="col s4">
+      <h5>Ingredients To Choose From</h5>
+      <input
+        #searchIngredient
+        type="text"
+        placeholder="search for ingredient"
+        (keyup)="searchList(searchIngredient.value)"
+      />
+
+      <ul>
+        <div *ngFor="let ingredient of ingredients">
+          <a
+            class="btn waves-effect waves-light"
+            style="width: 20rem;"
+            (click)="pushToMine(ingredient)"
+          >
+            <i class="material-icons right">arrow_forward</i>
+            {{ ingredient.name }}
+          </a>
+        </div>
+      </ul>
+    </div>
+    <div class="col s4">
+      <h5>The Ingredients I have</h5>
+      <ul>
+        <div *ngFor="let myingredient of myIngredients">
+          <a
+            class="btn waves-effect waves-light"
+            style="width: 20rem;"
+            (click)="pushToIngredientsList(myingredient)"
+          >
+            <i class="material-icons left">arrow_back</i>
+            {{ myingredient.name }}
+          </a>
+        </div>
+      </ul>
+    </div>
+    <div class="col s4">
+      <a
+        class="btn waves-effect waves-light"
+        (click)="searchRecipes()"
+      >
+      <i class="material-icons left">send</i>
+        Search Recipes
+      </a>
+    </div>
+  </div>
+
+
+  <app-queried-recipes></app-queried-recipes>
+</div>
